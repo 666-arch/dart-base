@@ -12,7 +12,7 @@ void main(List<String> args) {
 // }
 
 
-// 工厂构造函数最大的特点：可以手动的返回一个对象
+// 工厂构造函数最大的特点：可以手动的返回一个对象（内存占多，减少对象创建过程）
 class Person {
   String? name;
   String? color;
