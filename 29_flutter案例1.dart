@@ -1,0 +1,78 @@
+import 'package:flutter/material.dart';
+
+main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: HCHomePage(), //启动页
+    );
+  }
+}
+
+class HCHomePage extends StatelessWidget {
+  const HCHomePage({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('商品列表'),
+      ),
+      body: const HCHomeContent(),
+    );
+  }
+}
+
+class HCHomeContent extends StatelessWidget {
+  const HCHomeContent({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: const <Widget>[
+        HCHomeProductItem(
+            title: 'apple1',
+            desc: 'macbook1',
+            imgUrl:
+                'data:image/png;base64,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'),
+        HCHomeProductItem(
+            title: 'apple2',
+            desc: 'macbook2',
+            imgUrl:
+                'data:image/png;base64,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'),
+        HCHomeProductItem(
+            title: 'apple3',
+            desc: 'macbook3',
+            imgUrl:
+                'data:image/png;base64,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'),
+      ],
+    );
+  }
+}
+
+class HCHomeProductItem extends StatelessWidget {
+  final String title;
+  final String desc;
+  final String imgUrl;
+  final style1 = const TextStyle(color: Colors.orange, fontSize: 25);
+  final style2 = const TextStyle(color: Colors.green, fontSize: 25);
+  const HCHomeProductItem(
+      {super.key,
+      required this.title,
+      required this.desc,
+      required this.imgUrl});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Text(title, style: style1),
+        const SizedBox(height: 10), //间距调整
+        Text(desc, style: style2),
+        const SizedBox(height: 10), //间距调整
+        Image.network(imgUrl)
+      ],
+    );
+  }
+}
